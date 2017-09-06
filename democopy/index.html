@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<ul>					
+			<li>
+				<dl>
+					<dt ><span class="area">云南：</span><span class="weiCode foo">CG088881</span></dt>
+					<dd class="btn" id="btn" data-clipboard-target=".foo">复制微信号</dd>
+				</dl>
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var clipboard = new Clipboard('.btn');
+			console.log(clipboard)
+			clipboard.on('success', function(e){
+			    alert('复制成功!');
+			    e.clearSelection();
+			});
+			clipboard.on('error', function(e){
+			    alert('请选择“拷贝”进行复制!')
+			});
+		</script>
+	</body>
+</html>
